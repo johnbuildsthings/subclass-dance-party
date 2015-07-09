@@ -1,14 +1,16 @@
 .hero {
+  z-index: 2;
   width: 68px;
   height: 64px;
   position: absolute;
   bottom: 128px; // ??
   left: 50%;
+  background: url('../sprites/hero-small.png') no-repeat;
   &.mario {
-    background: url('../sprites/mario-small.png') no-repeat;
+    
   }
   &.luigi {
-    background: url('../sprites/luigi-small.png') no-repeat;
+    background-position-y: -128px;
   }
   // States
   &.stand {} // for reference
@@ -20,48 +22,14 @@
   &.jump {background-position-x: -206px;}
 }
 
-.static {
-  z-index: 0;
-}
 
-.cloud {
-  background: url('../sprites/clouds.png');
-  height: 96px;
+.mushroom {
+  z-index: 1;
+  background: url('../sprites/mushroom.png');
   position: absolute;
-  &.one {
-    width: 128px;
-    background-position-x: -448px;
-  }
-  &.two {
-    width: 192px;
-    background-position-x: 0;
-  }
-  &.three {
-    width: 256px;
-    background-position-x: -192px;
-  }
-}
-
-.hill {
-  background: url('../sprites/hills.png');
-  position: absolute;
-  bottom: 128px; // ??
-  &.small {
-    width: 192px;
-    height: 76px;
-    background-position-y: -64px;
-  }
-  &.large {
-    width: 320px;
-    height: 140px;
-    background-position-x: -192px;
-  }
-}
-
-.block {
+  right: 400px;
+  bottom: 128px;
   width: 64px;
   height: 64px;
-
 }
-
 
