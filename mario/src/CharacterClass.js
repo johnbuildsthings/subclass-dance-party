@@ -13,7 +13,7 @@ var Character = function(){
   /*need ability to handle collisions with other
   character class*/
   Sprite.call(this);
-}
+};
 
 Character.prototype = Object.create(Sprite.prototype);
 Character.prototype.constructor = Character;

@@ -10,9 +10,6 @@ $(document).ready(function(){
 
 
   $(".startGame").on("click", function(event){
-    $(document).keydown(function(event) {
-      console.log(event.which);
-    });
 
     //var characterFunctionName = $(this).data("hero-name");
     //var characterMakerFunction = window[characterFunctionName];
@@ -21,6 +18,11 @@ $(document).ready(function(){
       window.player1 = new Hero(128, 100);
       $("#stage").prepend(player1.$node);
     }
+    $(document).keydown(function(event) {
+      player1.moveRight();
+      console.log(player1.moveRight);
+      console.log(event.which);
+    });
     
   });
 

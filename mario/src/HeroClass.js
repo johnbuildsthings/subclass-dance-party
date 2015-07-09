@@ -6,12 +6,11 @@
     */
 
 var Hero = function(bottom, left){
-  Character.call(this);
-  this.$node = $('<div class="hero luigi stand"></div>');
+  Character.call(this, '<div class="hero luigi stand"></div>');
   
   //var wWidth = $(window).width();
   //var wHeight = $(window).height();
-
+  // debugger;
   this.setPosition(bottom, left);
 
 }
@@ -19,9 +18,12 @@ var Hero = function(bottom, left){
 Hero.prototype = Object.create(Character.prototype);
 Hero.prototype.constructor = Hero;
 
-Hero.prototype.move = function(top, left){
-  var step = step; //calls CharacterSuperClass step method;
+Hero.prototype.moveRight = function(){
   
-  this.setPosition(top, left);
+  var left = this.getPosition().left;  
+  var bottom = this.getPosition().bottom;
+  console.log(left);
+
+  this.setPosition(bottom, left+10);
 
 }
