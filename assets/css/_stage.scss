@@ -1,0 +1,16 @@
+// Stage
+#stage {
+  background: $sky;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#ground {
+  position: absolute;
+  background: url('../layout/block-ground.png');
+  width: 100%;
+  height: 128px;
+  bottom: 0;
+}
+

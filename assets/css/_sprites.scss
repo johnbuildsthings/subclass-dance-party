@@ -1,0 +1,23 @@
+.hero {
+  width: 34px;
+  height: 32px;
+  position: absolute;
+  bottom: 128px; // ??
+
+  &.mario {
+    background: url(../sprites/mario-small.png) no-repeat;
+  }
+  &.luigi {
+    background: url(../sprites/luigi-small.png) no-repeat;
+  }
+  // States
+  &.stand {} // for reference
+  &.die {background-position-x: -34px;}
+  &.start-run {background-position-x: -68px;}
+  &.step-one {background-position-x: -102px;}
+  &.step-two {background-position-x: -136px;}
+  &.step-three {background-position-x: -170px;}
+  &.jump {background-position-x: -206px;}
+}
+
+
