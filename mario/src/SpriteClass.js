@@ -13,11 +13,9 @@ all sprites need:
     collides
 */
 
-var Sprite = function(element){
-  this.$node = $('<div class="hero luigi stand"></div>');
-  this.bottom = 0;
-  this.left = 0;
-  
+var Sprite = function(){
+  this.x = 0;
+  this.y = 0;
   this.setPosition.call(this,0,0);
 }
 
@@ -29,17 +27,16 @@ var Sprite = function(element){
 //   /*makes objects fall toward bottom of screen*/
 // }
 
-Sprite.prototype.setPosition = function(bottom, left){
-  this.bottom = bottom;
-  this.left = left;
-  debugger;
-  this.$node.css({'bottom': this.bottom, 'left': this.left});
+Sprite.prototype.setPosition = function(x, y){
+  this.x = x;
+  this.y = y;
+  this.$node.css({'bottom': this.x, 'left': this.y});
 }
 
 Sprite.prototype.getPosition = function(){
   var style = {
-    bottom: this.bottom,
-    left: this.left, //these not working yet
+    x: this.x,
+    y: this.y
   }
   return style;
 }
