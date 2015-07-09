@@ -5,6 +5,7 @@ var lineUp = function() {
 
   allDancers.forEach( function(dancer, i){
     // debugger;
-    dancer.setPosition(200, ((windowWidth / numberOfDancers) *(i+1)));
+    var test = windowWidth / numberOfDancers
+    dancer.setPosition(200, test * i + (test/2));
   });
 }
