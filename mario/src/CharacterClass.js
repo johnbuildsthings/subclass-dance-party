@@ -15,14 +15,13 @@ var Character = function(){
   Sprite.call(this);
 }
 
-Charater.prototype = Object.create(Sprite.prototype);
-Charater.prototype.constructor = Charater;
+Character.prototype = Object.create(Sprite.prototype);
+Character.prototype.constructor = Character;
 
-Charater.prototype.CharacterCollisionHandling = function(char1, char2){
+Character.prototype.CharacterCollisionHandling = function(char1, char2){
   /*handles collision of characters*/
 }
 
-Charater.prototype.step = function(){
-  
+Character.prototype.step = function(){
   setTimeout(this.step.bind(this), this.timeBetweenSteps);
 }

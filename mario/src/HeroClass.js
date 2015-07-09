@@ -5,13 +5,14 @@
     to handle keyboard input to move
     */
 
-var Hero = function(top, left){
+var Hero = function(bottom, left){
   Character.call(this);
+  this.$node = $('<div class="hero luigi stand"></div>');
   
-  var wWidth = $(window).width();
-  var wHeight = $(window).height();
+  //var wWidth = $(window).width();
+  //var wHeight = $(window).height();
 
-  this.setPosition(top, left);
+  this.setPosition(bottom, left);
 
 }
 

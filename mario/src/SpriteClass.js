@@ -14,9 +14,9 @@ all sprites need:
 */
 
 var Sprite = function(){
-  this.$node = $('<span class="Sprite"></span>');
-  var screenPosition = {
-    top: 0,
+  
+  this.screenPosition = {
+    bottom: 0,
     left: 0,
   }
   this.setPosition(0,0);
@@ -30,7 +30,7 @@ Sprite.prototype.gravity = function(){
   /*makes objects fall toward bottom of screen*/
 }
 
-Sprite.prototype.setPosition = function(top, left){
-  this.screenPosition.top = this.top + top;
+Sprite.prototype.setPosition = function(bottom, left){
+  this.screenPosition.bottom = this.bottom + bottom;
   this.screenPosition.left = this.left + left;
 }
