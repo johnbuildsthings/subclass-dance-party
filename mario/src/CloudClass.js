@@ -3,9 +3,9 @@
   */
 
 var Cloud = function(x,y, number, speed){
-  this.$node = $('<div class="cloud ' + number + '"></div>');
   
   Layout.call(this, x, y);
+  this.$node = $('<div class="cloud ' + number + '"></div>');
   this.speed = speed;
   // this.setPosition(x, y);
   this.step();

@@ -21,6 +21,7 @@ var Sprite = function(){
 
 // Sprite.prototype.collisionHandle = function(){
 //   /*not sure yet what goes here*/
+  
 // }
 
 // Sprite.prototype.gravity = function(){
