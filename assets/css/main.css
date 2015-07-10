@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -70,7 +71,7 @@ table {
   .hero.step-three {
     background-position-x: -170px; }
   .hero.jump {
-    background-position-x: -408px; }
+    background-position-x: -408€2px; }
 
 .mushroom {
   z-index: 1;

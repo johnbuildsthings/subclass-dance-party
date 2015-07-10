@@ -26,6 +26,10 @@ var Sprite = function(){
 // Sprite.prototype.gravity = function(){
 //   /*makes objects fall toward bottom of screen*/
 // }
+Sprite.prototype.step = function(){
+  setTimeout(this.step.bind(this), this.timeBetweenSteps);
+}
+
 
 Sprite.prototype.setPosition = function(x, y){
   this.x = x;

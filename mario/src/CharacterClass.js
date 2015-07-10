@@ -9,7 +9,7 @@ every character needs:
   ability to move
 */
 
-var Character = function(element){
+var Character = function(){
   /*need ability to handle collisions with other
   character class*/
   Sprite.call(this);
@@ -22,10 +22,4 @@ Character.prototype.CharacterCollisionHandling = function(char1, char2){
   /*handles collision of characters*/
 }
 
-Character.prototype.step = function(){
-  setTimeout(this.step.bind(this), this.timeBetweenSteps);
-}
 
-Character.prototype.stand = function() {
-  this.$node.removeClass('jump');
-}
