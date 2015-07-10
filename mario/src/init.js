@@ -32,7 +32,15 @@ $(document).ready(function(){
     $("#stage").prepend(cloud.$node);
   }
 
-  window.enemy = new Enemy(128, 500, 'ghoomba');
+  var createGhoomba = function() {
+    var enemy = new Enemy(128, Math.floor(Math.random() * wWidth), 'ghoomba');
+    $("#stage").prepend(enemy.$node);
+  }
+
+  $('.ghoombaGenerator').on('click', function() {
+    createGhoomba();
+  })
+
   // window.cloud1 = new Cloud(400, 500, 'one');
   // window.cloud2 = new Cloud(300, 500, 'two');
 
@@ -43,8 +51,20 @@ $(document).ready(function(){
   randomCloudGenerator();
   randomCloudGenerator();
   randomCloudGenerator();
+  randomCloudGenerator();
 
-  $("#stage").prepend(enemy.$node);
+  var sound = false;
+  $('.sound').on('click', function() {
+    if (sound === false) {
+      $('#tune')[0].play();
+      sound = true;
+    } else {
+      $('#tune')[0].pause();
+      sound = false;
+    }
+  });
+
+  
   // $("#stage").prepend(cloud1.$node);
   // $("#stage").prepend(cloud2.$node);
   var keys = {};
@@ -83,15 +103,15 @@ $(document).ready(function(){
     $('#stage').prepend(thing.$node);  
   }
 
-  var layoutGenerator = function(){
-
-  }
-  addStatic(128, Math.random()*500 + 100, 'hill large');
-  addStatic(128, Math.random()*200, 'hill small');
-  addStatic(128, wWidth - 250, 'castle large');
-  addStatic(256, 256, 'block coin');
+  addStatic(128, Math.random()*300 + 200, 'hill large');
+  addStatic(128, Math.random()*200 + 100, 'hill small');
+  addStatic(128, wWidth - 200, 'castle small');
+  addStatic(256, 256, 'block brick');
   addStatic(256, 320, 'block brick');
-  addStatic(256, 384, 'block brick');
+  addStatic(256, 384, 'block coin');
+  addStatic(128, -64, 'shrub one');
+  addStatic(128, wWidth - 256, 'shrub two');
+  addStatic(128, 64, 'pipe');
   // Add static elements
   
 
