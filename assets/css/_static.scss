@@ -8,15 +8,15 @@
 
 .castle { 
   position: absolute;
-  z-index: 0;
+  z-index: 1;
   bottom: 128px;
-  width: 160px; // Default for small
-  height: 159px;
+  width: 320px; // Default for small
+  height: 318px;
   background: url('../layout/castle-small.png');
   &.small {}
   &.large {
-    width: 300px;
-    height: 352px;
+    width: 600px;
+    height: 704px;
     background: url('../layout/castle-large.png');
   }
   
@@ -80,6 +80,7 @@
 
 
 .block {
+  z-index: 1;
   position: absolute;
   width: 64px;
   height: 64px;

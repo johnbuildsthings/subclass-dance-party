@@ -1,0 +1,1 @@
+var Layout=function(t,o,e){this.$node=$('<div class="'+e+'"></div>'),Sprite.call(this),this.setPosition(t,o)};Layout.prototype=Object.create(Sprite.prototype),Layout.prototype.constructor=Layout;

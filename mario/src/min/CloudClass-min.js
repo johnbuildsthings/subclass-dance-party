@@ -1,0 +1,1 @@
+var Cloud=function(t,o,i,s){Layout.call(this,t,o),this.$node=$('<div class="cloud '+i+'"></div>'),this.speed=s,this.step()};Cloud.prototype=Object.create(Layout.prototype),Cloud.prototype.constructor=Cloud,Cloud.prototype.step=function(){Layout.prototype.step.call(this,this.speed);var t=this.getPosition().x,o=this.getPosition().y,i=$(window).width;this.setPosition(t,o-10)};

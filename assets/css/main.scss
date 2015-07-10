@@ -12,14 +12,25 @@ body, html{
 
 body {
   font-family: Arial;
+  font-size: 16px;
 }
 
 
 nav {
   position: absolute;
   z-index: 1;
-  background: white;
   width: 100%;
+  span {
+    float: left;
+    display: block;
+    line-height: 40px;
+    padding: 10px 20px;
+    background: rgba(255,255,255,0.6);
+    cursor: pointer;
+    &:hover {
+      background: $green;
+    }
+  }
 }
 
 .flip-v {
