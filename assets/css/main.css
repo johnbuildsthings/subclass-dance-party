@@ -71,24 +71,48 @@ table {
   .hero.step-three {
     background-position-x: -170px; }
   .hero.jump {
-    background-position-x: -408€2px; }
+    background-position-x: -408px; }
+  .hero.large {
+    background: url("../sprites/hero-large.png") no-repeat;
+    left: 25%;
+    height: 132px; }
 
 .mushroom {
   z-index: 1;
   background: url("../sprites/mushroom.png");
   position: absolute;
-  right: 400px;
   bottom: 128px;
   width: 64px;
   height: 64px; }
+
+.ghoomba {
+  z-index: 1;
+  background: url("../sprites/ghoomba.png");
+  position: absolute;
+  bottom: 128px;
+  width: 64px;
+  height: 64px; }
+  .ghoomba.step {
+    background-position-x: -64px; }
 
 .pipe {
   background: url("../layout/pipe.png");
   width: 128px;
   height: 128px;
   position: absolute;
+  bottom: 128px; }
+
+.castle {
+  position: absolute;
+  z-index: 0;
   bottom: 128px;
-  right: 128px; }
+  width: 160px;
+  height: 159px;
+  background: url("../layout/castle-small.png"); }
+  .castle.large {
+    width: 300px;
+    height: 352px;
+    background: url("../layout/castle-large.png"); }
 
 .cloud {
   z-index: 0;
