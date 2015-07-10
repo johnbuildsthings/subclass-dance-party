@@ -5,23 +5,15 @@
     to handle keyboard input to move
     */
 
-var Hero = function(bottom, left){
-  Character.call(this);
+var Hero = function(x, y){
   this.$node = $('<div class="hero luigi stand"></div>');
-  
+  Character.call(this);
   //var wWidth = $(window).width();
   //var wHeight = $(window).height();
-
-  this.setPosition(bottom, left);
+  // debugger;
+  this.setPosition(x, y);
 
 }
 
 Hero.prototype = Object.create(Character.prototype);
 Hero.prototype.constructor = Hero;
-
-Hero.prototype.move = function(top, left){
-  var step = step; //calls CharacterSuperClass step method;
-  
-  this.setPosition(top, left);
-
-}

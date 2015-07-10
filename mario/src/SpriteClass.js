@@ -14,23 +14,29 @@ all sprites need:
 */
 
 var Sprite = function(){
-  
-  this.screenPosition = {
-    bottom: 0,
-    left: 0,
+  this.x = 0;
+  this.y = 0;
+  this.setPosition.call(this,0,0);
+}
+
+// Sprite.prototype.collisionHandle = function(){
+//   /*not sure yet what goes here*/
+// }
+
+// Sprite.prototype.gravity = function(){
+//   /*makes objects fall toward bottom of screen*/
+// }
+
+Sprite.prototype.setPosition = function(x, y){
+  this.x = x;
+  this.y = y;
+  this.$node.css({'bottom': this.x, 'left': this.y});
+}
+
+Sprite.prototype.getPosition = function(){
+  var style = {
+    x: this.x,
+    y: this.y
   }
-  this.setPosition(0,0);
-}
-
-Sprite.prototype.collisionHandle = function(){
-  /*not sure yet what goes here*/
-}
-
-Sprite.prototype.gravity = function(){
-  /*makes objects fall toward bottom of screen*/
-}
-
-Sprite.prototype.setPosition = function(bottom, left){
-  this.screenPosition.bottom = this.bottom + bottom;
-  this.screenPosition.left = this.left + left;
+  return style;
 }
