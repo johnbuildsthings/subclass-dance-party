@@ -13,6 +13,7 @@ var Character = function(){
   /*need ability to handle collisions with other
   character class*/
   Sprite.call(this);
+  gameElements.push(this);
 };
 
 Character.prototype = Object.create(Sprite.prototype);

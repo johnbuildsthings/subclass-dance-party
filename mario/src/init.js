@@ -7,7 +7,11 @@
 window.player1 = null;;
 window.player2 = null;;
 window.enemy = null;
+window.gameElements = [];
+
 $(document).ready(function(){
+  var wWidth = $(window).width();
+  var wHeight = $(window).height();
 
   if (player1 === null) {
     window.player1 = new Hero(128, 100, 'mario');
@@ -18,9 +22,36 @@ $(document).ready(function(){
     window.player2 = new Hero(128, 200, 'luigi');
     $("#stage").prepend(player2.$node);
   }
+
+  window.enemy = new Enemy(128, 500, 'ghoomba');
+  $("#stage").prepend(enemy.$node);
   
-  var wWidth = $(window).width();
-  var wHeight = $(window).height();
+  var collisionHandling = function(){
+    //68px
+    var p1 = player1.getPosition().y;
+    var p2 = player2.getPosition().y;
+    var e1 = enemy.getPosition().y;
+    
+    //p1 collision with e1
+    if((p1 > e1 && p1 < e1+68) || (p1+68 > e1 && p1+68 < e1+68)){
+      player1.$node.addClass('die')
+        .animate({"bottom": 256}, 200)
+        .animate({"bottom": -70}, 100);
+      delete player1.$node;
+      console.log('player 1 died');
+    }
+    //p2 collision with e1
+    if((p2 > e1 && p2 < e1+68) || (p2+68 > e1 && p2+68 < e1+68)){
+      player2.$node.addClass('die')
+        .animate({"bottom": 256}, 200)
+        .animate({"bottom": -70}, 100);
+      delete player2.$node;
+      console.log('player2 died');
+    }
+  }
+
+  setInterval(collisionHandling, 40);
+  
 
   var randomCloudGenerator = function(){
     var x = (Math.random() * wHeight) + 128;
@@ -32,10 +63,7 @@ $(document).ready(function(){
     $("#stage").prepend(cloud.$node);
   }
 
-  window.enemy = new Enemy(128, 500, 'ghoomba');
-  // window.cloud1 = new Cloud(400, 500, 'one');
-  // window.cloud2 = new Cloud(300, 500, 'two');
-
+  
   $(".cloudGenerator").on('click', function() {
     randomCloudGenerator();
   });
@@ -44,9 +72,6 @@ $(document).ready(function(){
   randomCloudGenerator();
   randomCloudGenerator();
 
-  $("#stage").prepend(enemy.$node);
-  // $("#stage").prepend(cloud1.$node);
-  // $("#stage").prepend(cloud2.$node);
   var keys = {};
 
   function keyMapping() {
@@ -66,6 +91,7 @@ $(document).ready(function(){
       if (key === '87')
         player2.jump();
     }
+    // collisionHandling();
   }
   // move player 1
   $(document).keydown(function(event) {
@@ -94,6 +120,15 @@ $(document).ready(function(){
   addStatic(256, 384, 'block brick');
   // Add static elements
   
+  $(".lineUp").on('click', function(){
+    var spacing = wWidth/gameElements.length;
+
+    for(var i=0;i<gameElements.length;i++){
+      clearTimeout(gameElements[i].step);
+      gameElements[i].setPosition(128, i*spacing);
+    }
+  });
+  console.log(gameElements);
 
   $(".startGame").on("click", function(event){
     //var characterFunctionName = $(this).data("hero-name");
