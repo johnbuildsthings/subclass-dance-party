@@ -140,12 +140,15 @@ $(document).ready(function(){
   addStatic(128, wWidth - 256, 'shrub two');
   addStatic(128, 64, 'pipe');
   // Add static elements
+
+
   
   $(".lineUp").on('click', function(){
     var spacing = wWidth/gameElements.length;
 
     for(var i=0;i<gameElements.length;i++){
-      clearTimeout(gameElements[i].step);
+      console.log(player1.timer);
+      clearTimeout(gameElements[i].timer);
       gameElements[i].setPosition(128, i*spacing);
     }
   });

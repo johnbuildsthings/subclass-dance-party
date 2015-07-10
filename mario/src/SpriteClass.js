@@ -17,6 +17,7 @@ var Sprite = function(){
   this.x = 0;
   this.y = 0;
   this.setPosition.call(this,0,0);
+  this.timer = null;
 }
 
 // Sprite.prototype.collisionHandle = function(){
@@ -28,7 +29,7 @@ var Sprite = function(){
 //   /*makes objects fall toward bottom of screen*/
 // }
 Sprite.prototype.step = function(timeBetweenSteps){
-  setTimeout(this.step.bind(this), timeBetweenSteps);
+  this.timer = setTimeout(this.step.bind(this), timeBetweenSteps);
 }
 
 
