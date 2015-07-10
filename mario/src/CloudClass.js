@@ -2,11 +2,11 @@
   makes moving clouds
   */
 
-var Cloud = function(x,y, name){
-  this.$node = $('<div class="Cloud ' + name + '"></div>');
+var Cloud = function(x,y, number, speed){
+  this.$node = $('<div class="cloud ' + number + '"></div>');
   
   Layout.call(this, x, y);
-
+  this.speed = speed;
   // this.setPosition(x, y);
   this.step();
 }
@@ -15,17 +15,13 @@ Cloud.prototype = Object.create(Layout.prototype);
 Cloud.prototype.constructor = Cloud;
 
 Cloud.prototype.step = function(){
-  Layout.prototype.step();
+  Layout.prototype.step.call(this, this.speed);
   var currentX = this.getPosition().x;  
   var currentY = this.getPosition().y;
 
   var wWidth = $(window).width;
 
   
-  if(currentY+10 > wWidth){
-    this.setPosition(currentX, currentY - 10);
-  }else{
-    this.setPosition(currentX, currentY + 10);
-  }
-  
+  this.setPosition(currentX, currentY - 10);
+    
 }
